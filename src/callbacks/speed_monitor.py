@@ -45,7 +45,7 @@ class SpeedMonitor(Callback):
         pl_module: "pl.LightningModule",
         batch: Any,
         batch_idx: int,
-        dataloader_idx: int
+        # dataloader_idx: int
     ) -> None:
         if self._log_stats.intra_step_time:
             self._snap_intra_step_time = time.time()
@@ -69,7 +69,7 @@ class SpeedMonitor(Callback):
         outputs: STEP_OUTPUT,
         batch: Any,
         batch_idx: int,
-        dataloader_idx: int,
+        # dataloader_idx: int
     ) -> None:
         if self._log_stats.inter_step_time:
             self._snap_inter_step_time = time.time()

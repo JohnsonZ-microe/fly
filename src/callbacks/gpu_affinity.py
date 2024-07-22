@@ -42,5 +42,9 @@ class GpuAffinity(Callback):
     def setup(self, trainer: Trainer, pl_module: LightningModule, stage=None) -> None:
         set_affinity(trainer)
 
-    def on_init_start(self, trainer: Trainer) -> None:
+    # def on_init_start(self, trainer: Trainer) -> None:
+    #     set_affinity(trainer)
+
+    # rika修改：将on_fit_start改为on_fit_start, 其中on_fit_start需要接收三个参数
+    def on_fit_start(self, trainer: Trainer, pl_module: LightningModule, stage=None) -> None:
         set_affinity(trainer)

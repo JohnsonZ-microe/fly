@@ -40,6 +40,6 @@ def move_valimg(val_dir='./cache/data/imagenet/val', devkit_dir='./cache/data/IL
 
 
 if __name__ == '__main__':
-    val_dir = '/home/zyzhao/ILSVRC2012_img_val/val'
-    devkit_dir = '/home/zyzhao/ILSVRC2012_devkit_t12'
+    val_dir = '/home/yhzhang/ILSVRC2012_img_val/val'
+    devkit_dir = '/home/yhzhang/ILSVRC2012_devkit_t12'
     move_valimg(val_dir, devkit_dir)
