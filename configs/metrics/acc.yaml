@@ -1,3 +1,5 @@
 # @package eval.metrics
 acc:
   _target_: src.metrics.accuracy.AccuracyMine
+  task: multiclass
+  num_classes: 1000

@@ -49,6 +49,7 @@ class ImagenetDataModule(LightningDataModule):
         train_transforms=None,
         test_transforms=None,
         val_transforms=None,
+        mixup=None,
         *args: Any,
         **kwargs: Any,
     ) -> None:
@@ -69,6 +70,7 @@ class ImagenetDataModule(LightningDataModule):
         self.val_transforms = val_transforms
         self.test_transforms = test_transforms
         self.train_transforms = train_transforms
+        self.mixup = mixup
 
         self.image_size = image_size
         self.dims = (3, self.image_size, self.image_size)

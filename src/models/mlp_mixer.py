@@ -277,6 +277,7 @@ class MlpMixer(nn.Module):
             drop_path_rate=0.,
             nlhb=False,
             stem_norm=False,
+            default_cfg=None
     ):
         super().__init__()
         self.num_classes = num_classes
@@ -297,6 +298,7 @@ class MlpMixer(nn.Module):
         self.head = nn.Linear(embed_dim, self.num_classes) if num_classes > 0 else nn.Identity()
 
         self.init_weights(nlhb=nlhb)
+        self.default_cfg = default_cfg
 
     def init_weights(self, nlhb=False):
         head_bias = -math.log(self.num_classes) if nlhb else 0.
